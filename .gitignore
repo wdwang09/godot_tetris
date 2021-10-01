@@ -1,0 +1,12 @@
+# Import cache
+.import/
+
+# Binaries
+bin/
+build/
+lib/
+
+**/*.dll
+**/*.exe
+**/*.pck
+export_presets.cfg
