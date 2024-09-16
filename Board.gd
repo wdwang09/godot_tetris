@@ -7,7 +7,7 @@ var Cell = preload("res://Cell.tscn")
 func create_cells(row, col):
 	self.columns = col  # for grid container
 	for i in range(len(cell_obj_matrix)):
-		while not cell_obj_matrix[i].empty():
+		while not cell_obj_matrix[i].is_empty():
 			var cell = cell_obj_matrix[i].pop_back()
 			remove_child(cell)
 			cell.queue_free()
@@ -17,7 +17,7 @@ func create_cells(row, col):
 	for i in range(row):
 		cell_obj_matrix.append([])
 		for j in range(col):
-			var cell = Cell.instance()
+			var cell = Cell.instantiate()
 			add_child(cell)
 			cell_obj_matrix[-1].append(cell)
 

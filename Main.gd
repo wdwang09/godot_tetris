@@ -1,7 +1,7 @@
 extends Node2D
 
-export var row_num := 20
-export var col_num := 10
+@export var row_num := 20
+@export var col_num := 10
 
 var cell_matrix = []
 const blocks = [
@@ -50,8 +50,8 @@ var next_block = []
 
 var score := 0
 
-onready var board_container = $HBoxContainer/CenterContainer/Board
-onready var next_block_container = $HBoxContainer/VBoxContainer/CenterContainer/NextBlock
+@onready var board_container = $HBoxContainer/CenterContainer/Board
+@onready var next_block_container = $HBoxContainer/VBoxContainer/CenterContainer/NextBlock
 
 enum Action {DOWN, LEFT, RIGHT, ROTATE}
 
@@ -187,7 +187,7 @@ func bottom_action():
 		if not line_flag:
 			continue
 		clear_line_num += 1
-		cell_matrix.remove(i)
+		cell_matrix.remove_at(i)
 		cell_matrix.insert(0, [])
 		for j in range(col_num):
 			cell_matrix[0].append(0)
